@@ -1,4 +1,14 @@
 # Weather-App-reactjs
-Weather application using OpenWeatherMap API
+<h1>Weather application using OpenWeatherMap API</h1>
 
-Built with TypeScript and Reactjs
+<p>Tech Stack: 
+  Core:
+- ReactJS
+- TypeScript
+- TailwindCSS
+
+Communication tool:
+- fetch</p> 
+
+
+Features:
