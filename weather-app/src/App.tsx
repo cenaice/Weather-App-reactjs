@@ -1,11 +1,23 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import Search from "./components/Search";
+import useForecast from './hooks/useForecast'
 
-const App = () => {
+const App: () => JSX.Element = () => {
+  const { term, options, weather, onInputChange, onOptionSelect, onSubmit } = useForecast();
+
   return (
     <main className="flex justify-center items-center bg-gradient-to-br from-sky-400 via-rose-400 to-lime-400 h-[100vh] w-full">
-      Hello World
+      {weather ? (
+        "We have a forecast"
+      ) : (
+        <Search
+          term={term}
+          options={options}
+          onInputChange={onInputChange}
+          onOptionSelect={onOptionSelect}
+          onSubmit={onSubmit}
+        />
+      )}
     </main>
   );
 };
