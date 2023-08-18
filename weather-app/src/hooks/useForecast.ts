@@ -1,5 +1,5 @@
 import { useState, useEffect, ChangeEvent } from "react";
-import { optionType } from "../types";
+import { optionType, forecastType } from "../types";
 
 const useForecast = () => {
   // API Key
@@ -11,7 +11,7 @@ const useForecast = () => {
   // Clear and Store drowndown box data
   const [city, setCity] = useState<optionType | null>(null);
   // Clicking drop down menu options and grabbing data
-  const [weather, weatherData] = useState<null>(null);
+  const [weather, weatherData] = useState<forecastType>(null);
 
   // Using input information for Geocoding API to find location
   // Geocoding API
@@ -42,10 +42,16 @@ const useForecast = () => {
   // Grab weather data after submitting
   const getWeatherData = (city: optionType) => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=imperial&appid=${WEATHER_APP_API_KEY}`
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=imperial&appid=${WEATHER_APP_API_KEY}`
     )
       .then((res) => res.json())
-      .then((data) => weatherData(data));
+      .then((data) => {
+        const forecastData = {
+          ...data.city,
+          list: data.list.slice(0, 16),
+        };
+        weatherData(forecastData);
+      });
   };
 
   const onSubmit = () => {
