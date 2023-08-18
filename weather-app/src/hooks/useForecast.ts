@@ -11,7 +11,7 @@ const useForecast = () => {
   // Clear and Store drowndown box data
   const [city, setCity] = useState<optionType | null>(null);
   // Clicking drop down menu options and grabbing data
-  const [weather, weatherData] = useState<forecastType>(null);
+  const [weather, weatherData] = useState<forecastType | null>(null);
 
   // Using input information for Geocoding API to find location
   // Geocoding API
