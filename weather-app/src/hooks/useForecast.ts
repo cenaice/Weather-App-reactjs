@@ -50,8 +50,8 @@ const useForecast = () => {
           ...data.city,
           list: data.list.slice(0, 16),
         };
-        weatherData(forecastData);
-      });
+        weatherData(forecastData)
+      }).catch(e => console.log(e))
   };
 
   const onSubmit = () => {
