@@ -1,3 +1,4 @@
+import AnimatedPage from "../AnimatedPage";
 import {
   getHumidityValue,
   getSunTime,
@@ -24,6 +25,7 @@ const Degree = ({ temp }: { temp: number }): JSX.Element => (
 const Forecast = ({ data }: Props): JSX.Element => {
   const today = data.list[0];
   return (
+    <AnimatedPage>
     <div className="w-full md:max-w-[500px] py-4 md:py-4 md:px-10 lg:px-24 h-full lg:h-auto bg-white bg-opacity-20 backdrop-blur-ls rounded drop-shadow-1g">
       <div className="mx-auto w-[300px]">
         <section className="text-center">
@@ -66,15 +68,16 @@ const Forecast = ({ data }: Props): JSX.Element => {
           ))}
         </section>
 
-        <section className="flex flex-wrap justify-between text-zinc-700">
+        <section className="flex flex-wrap justify-between text-zinc-800">
           <div className="w-[140px] text-xs font-bold flex flex-col items-center bg-white/20 backdroip-blue-1s rounded drop-shadow-1g py-4 mb-5">
-            <h1 className="pb-2 italic drop-shadow-lg">Sunrise</h1>
+            <h1 className="pb-2 font-bold">Sunrise</h1>
             <Sunrise /> <span className="mt-2">{getSunTime(data.sunrise)}</span>
           </div>
           <div className="w-[140px] text-xs font-bold flex flex-col items-center bg-white/20 backdroip-blue-1s rounded drop-shadow-1g py-4 mb-5">
-            <h1 className="pb-2 italic drop-shadow-lg">Sunset</h1>
+            <h1 className="pb-2 italic ">Sunset</h1>
             <Sunset /> <span className="mt-2">{getSunTime(data.sunset)}</span>
           </div>
+          
           <Tile
             icon="wind"
             title="Wind"
@@ -84,6 +87,7 @@ const Forecast = ({ data }: Props): JSX.Element => {
             )}, gusts 
             ${today.wind.gust.toFixed(1)} km/h`}
           />
+          
           <Tile
             icon="feels"
             title="Feels like"
@@ -123,6 +127,7 @@ const Forecast = ({ data }: Props): JSX.Element => {
         </section>
       </div>
     </div>
+    </AnimatedPage>
   );
 };
 

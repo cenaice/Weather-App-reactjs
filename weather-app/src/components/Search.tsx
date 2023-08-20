@@ -1,5 +1,7 @@
 import { ChangeEvent } from "react";
 import { optionType } from "./../types/";
+import { motion } from 'framer-motion'
+import sunsetImage from "../assets/sunset.jpg"; // Import the image
 
 type Props = {
   term: string;
@@ -17,8 +19,15 @@ const Search = ({
   onSubmit,
 }: Props): JSX.Element => {
   return (
-    <main className="flex justify-center items-center bg-gradient-to-br from-sky-400 via-rose-400 to-lime-400 h-[100vh] w-full">
-      <section className="w-full md:max-w-[500px] p-4 flex flex-col text-center items-center justify-center md:px-10 lg:p-24 h-full lg:h-[500px] bg-white bg-opacity-20 backdrop-blur-1g drop-shadow-1g rounded drop-shadow-1g text-zinc-700">
+    <main       className="flex justify-center items-center"
+    style={{
+      backgroundImage: `url(${sunsetImage})`, // Apply the background image
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      height: "100vh",
+      width: "100%",
+    }}>
+      <section className="w-full md:max-w-[500px] p-4 flex flex-col text-center items-center justify-center md:px-10 lg:p-24 h-full lg:h-[500px] bg-white bg-opacity-30 backdrop-blur-1g rounded drop-shadow-1g text-zinc-800">
         <h1 className="text-4xl font-thin">
           Weather<span className="font-black">Forecast</span>
         </h1>

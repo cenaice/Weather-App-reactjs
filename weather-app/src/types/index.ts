@@ -43,3 +43,9 @@ export type forecastType = {
     }
   ];
 };
+
+export type animationTypes = {
+  initial: {},
+  animate: {},
+  exit: {},
+}
