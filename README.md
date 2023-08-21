@@ -1,16 +1,10 @@
 # Weather-App-reactjs
-<h1>Weather application using OpenWeatherMap API</h1>
-
-<p>Tech Stack: 
-  
-  Core:
-- ReactJS
-- TypeScript
-- TailwindCSS
+<h1>Weather Forecast Application</h1>
+<h3>Created using ReactJS, OpenWeatherMap API, GeoCodingAPI, styled with TailwindCSS, and programmed in TypeScript</h3>
 
 Communication tool:
 - fetch</p> 
 
 
 Features:
-Dropdown box
+Coming soon.
