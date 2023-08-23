@@ -10,6 +10,7 @@ import { forecastType } from "./../types";
 import Sunrise from "./Icons/Sunrise";
 import Sunset from "./Icons/Sunset";
 import Tile from "./Tile";
+import { DateTime }  from "luxon";
 
 type Props = {
   data: forecastType;
@@ -22,11 +23,21 @@ const Degree = ({ temp }: { temp: number }): JSX.Element => (
   </span>
 );
 
+// Military time conversion
+export function convert(input:string) {
+  // Parse military string into datetime object
+  const militaryTime = DateTime.fromFormat(input, 'H:mm');
+
+  const standardTime = militaryTime.toFormat('h:mm')
+  // Format the DateTime object to the desired output format
+  return standardTime
+}
+
 const Forecast = ({ data }: Props): JSX.Element => {
   const today = data.list[0];
   return (
     <AnimatedPage>
-    <div className="w-full md:max-w-[500px] py-4 md:py-4 md:px-10 lg:px-24 h-full lg:h-auto bg-white bg-opacity-20 backdrop-blur-ls rounded drop-shadow-1g">
+    <div className="w-full md:max-w-[500px] py-4 md:py-4 md:px-10 lg:px-24 h-full lg:h-auto bg-white bg-opacity-30 backdrop-blur-ls rounded drop-shadow-1g">
       <div className="mx-auto w-[300px]">
         <section className="text-center">
           <h2 className="text-2xl font-black">
@@ -48,14 +59,14 @@ const Forecast = ({ data }: Props): JSX.Element => {
           </p>
         </section>
 
-        <section className="flex overflow-x-scroll   mt-4 pb-2 mb-5">
+        <section className="flex overflow-x-scroll   mt-4 pb-2 mb-5" >
           {data.list.map((item, i) => (
             <div
               className="inline-block text-center w-[50px] flex-shrink-0"
               key={i}
             >
-              <p className="text-sm">
-                {i === 0 ? "Now" : new Date(item.dt * 1000).getHours()}
+              <p className="text-xs">
+                {i === 0 ? "Now" : convert(new Date(item.dt * 1000).getHours() + ':00')}
               </p>
               <img
                 alt={`weather-icon-${item.weather[0].description}`}
@@ -69,12 +80,12 @@ const Forecast = ({ data }: Props): JSX.Element => {
         </section>
 
         <section className="flex flex-wrap justify-between text-zinc-800">
-          <div className="w-[140px] text-xs font-bold flex flex-col items-center bg-white/20 backdroip-blue-1s rounded drop-shadow-1g py-4 mb-5">
+          <div className="w-[140px] text-xs font-bold flex flex-col items-center bg-white/50 backdroip-blue-1s rounded drop-shadow-1g py-4 mb-5">
             <h1 className="pb-2 font-bold">Sunrise</h1>
             <Sunrise /> <span className="mt-2">{getSunTime(data.sunrise)}</span>
           </div>
-          <div className="w-[140px] text-xs font-bold flex flex-col items-center bg-white/20 backdroip-blue-1s rounded drop-shadow-1g py-4 mb-5">
-            <h1 className="pb-2 italic ">Sunset</h1>
+          <div className="w-[140px] text-xs font-bold flex flex-col items-center bg-white/50 backdroip-blue-1s rounded drop-shadow-1g py-4 mb-5">
+            <h1 className="pb-2 font-bold ">Sunset</h1>
             <Sunset /> <span className="mt-2">{getSunTime(data.sunset)}</span>
           </div>
           

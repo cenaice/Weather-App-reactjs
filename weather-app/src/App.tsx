@@ -3,7 +3,6 @@ import Search from "./components/Search";
 import Forecast from "./components/Forecast";
 import useForecast from "./hooks/useForecast";
 import { AnimatePresence } from "framer-motion";
-
 import sunsetImage from "./assets/sunset.jpg"; // Import the image
 
 const App: () => JSX.Element = () => {
