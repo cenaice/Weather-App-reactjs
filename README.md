@@ -33,12 +33,8 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -49,7 +45,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+WeatherForecast delivers up-to-the-minute weather information, granting you a real-time window into the dynamic conditions of your location or any desired location worldwide.`cenaice`, `weather-app-reactjs`, `victer-phiathep`, `victerphiathep@gmail.com`, `Weather Forecast`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -60,6 +56,8 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 * [![React][React.js]][React-url]
 * [![Angular][Angular.io]][Angular-url]
 * [![Svelte][Svelte.dev]][Svelte-url]
+* [![OpenWeatherAPI][OpenWeatherAPI.com]][OpenWeatherAPI-url]
+* [![TailWindCSS][TailwindCSS.com][TailwindCSS-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -96,32 +94,6 @@ This is an example of how to list things you need to use the software and how to
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- CONTACT -->
 ## Contact
@@ -163,9 +135,9 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
-[TailwindCSS.com]: 
+[TailwindCSS.com]: https://img.shields.io/badge/TailWindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white
 [TailwindCSS-url]: https://tailwindcss.com/
-[OpenWeatherAPI.com]:
+[OpenWeatherAPI.com]: https://img.shields.io/badge/OpenWeatherAPI-FFD580?style=for-the-badge&logoColor=white
 [OpenWeatherAPI-url]: https://openweathermap.org/
 
 
