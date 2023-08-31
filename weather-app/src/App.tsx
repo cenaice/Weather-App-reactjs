@@ -6,7 +6,7 @@ import { AnimatePresence } from "framer-motion";
 import sunsetImage from "./assets/sunset.jpg"; // Import the image
 
 const App: () => JSX.Element = () => {
-  const { term, options, weather, onInputChange, onOptionSelect, onSubmit } =
+  const { term, options, weather, onInputChange, onOptionSelect, onSubmit, isShaking } =
     useForecast();
   return (
     <main
@@ -29,6 +29,7 @@ const App: () => JSX.Element = () => {
             onInputChange={onInputChange}
             onOptionSelect={onOptionSelect}
             onSubmit={onSubmit}
+            isShaking={isShaking}
           />
         )}
       </AnimatePresence>

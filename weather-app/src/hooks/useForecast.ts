@@ -13,6 +13,7 @@ const useForecast = () => {
   // Clicking drop down menu options and grabbing data
   const [weather, weatherData] = useState<forecastType | null>(null);
 
+  const [isShaking, setIsShaking] = useState(false); // State to control shaking animation
   // Using input information for Geocoding API to find location
   // Geocoding API
   const getSearchOptions = (value: string) => {
@@ -26,7 +27,7 @@ const useForecast = () => {
   };
 
   const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.trim();
+    const value = e.target.value;
     // Display inputted text on input box
     setTerm(value);
 
@@ -55,7 +56,13 @@ const useForecast = () => {
   };
 
   const onSubmit = () => {
-    if (!city) return;
+    if (!city) {
+      setIsShaking(true); // Activate the shake animation
+      setTimeout(() => {
+        setIsShaking(false); // Turn off the shake animation after a delay
+      }, 1000);
+      return;
+    }
 
     getWeatherData(city);
   };
@@ -75,6 +82,7 @@ const useForecast = () => {
     onInputChange,
     onOptionSelect,
     onSubmit,
+    isShaking,
   };
 };
 
